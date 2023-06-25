@@ -1,6 +1,3 @@
-import bot from './ressources/bot.svg'
-import person from './ressources/person.svg'
-
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('.container')
 
@@ -48,7 +45,7 @@ function chatDesign(isAi, value, uniId) {
             <div class="chat">
                 <div class="profile">
                     <img 
-                      src=${isAi ? bot : person} 
+                      src=${isAi ? "./ressources/bot.png" : "./ressources/bot.png"} 
                       alt="${isAi ? 'bot' : 'person'}" 
                     />
                 </div>
@@ -83,7 +80,7 @@ const handleSubmit = async (e) => {
     
     loader(messageDiv);
 
-    const response = await fetch('http://localhost:5000', {
+    const response = await fetch('https://dexten.onrender.com', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
